@@ -1,0 +1,15 @@
+@import "src/styles/variables";
+
+.pokeball-icon {
+  width: 15px;
+  mix-blend-mode: luminosity;
+  margin-right: 5px;
+}
+
+.mat-list-item a {
+  color: $green-darkest;
+}
+
+.search {
+  background: rgba(0, 0, 0, 0.05);
+}

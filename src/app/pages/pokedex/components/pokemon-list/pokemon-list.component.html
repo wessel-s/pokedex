@@ -1,0 +1,37 @@
+<div class="search">
+  <mat-form-field appearance="fill">
+    <mat-label>Search Pokemon</mat-label>
+    <input
+      (keyup)="filterPokemon()"
+      [(ngModel)]="searchString"
+      [ngModelOptions]="{ standalone: true }"
+      matInput
+      maxlength="256"
+      placeholder="Ex. Charizard..."
+    />
+    <mat-hint align="end">{{ searchString.length }} / 256</mat-hint>
+  </mat-form-field>
+</div>
+
+<mat-list dense id="pokemon-list">
+  <ng-container *ngIf="filteredCreatures as creatures; else loading">
+    <ng-container *ngFor="let creature of creatures">
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <img class="pokeball-icon" src="assets/icons/pokeball.svg" />
+        <a
+          [routerLink]="[
+            '/pokedex/details',
+            helperService.getLastPathFromURL(creature.url)
+          ]"
+          matline
+        >
+          <span>{{ creature.name | titlecase }}</span>
+        </a>
+      </mat-list-item>
+    </ng-container>
+  </ng-container>
+  <ng-template #loading>
+    <mat-list-item>No Pokemon found with '{{ searchString }}'</mat-list-item>
+  </ng-template>
+</mat-list>

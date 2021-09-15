@@ -1,0 +1,67 @@
+@import "src/styles/variables";
+
+//.mat-list-item-content {
+//  display: grid !important;
+//  padding: 0 1rem !important;
+//}
+
+.pokemon {
+  h2,
+  p,
+  a,
+  div,
+  span {
+    color: $green-darkest;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  span {
+    //font-size: smaller;
+  }
+
+  .mat-list-item {
+    height: auto;
+    padding: 0.5rem 0;
+  }
+
+  &__sprites {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
+
+    img {
+      mix-blend-mode: luminosity;
+
+      &:only-child {
+        grid-column: 1/-1;
+      }
+    }
+  }
+
+  .split-info {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-gap: 0.5rem;
+  }
+
+  .even-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    > span:last-child {
+      text-align: right;
+    }
+  }
+}

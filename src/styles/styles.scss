@@ -1,0 +1,34 @@
+// Global
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+// Utility
+.underline {
+  text-decoration: underline;
+}
+
+// Overwrites
+.mat-chip a,
+.mat-list-item a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.mat-list-base[dense] {
+  padding-top: 0 !important;
+}
